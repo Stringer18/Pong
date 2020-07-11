@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5D762527-3758-41D0-9C23-F484321FF81C}</ProjectGuid>
+    <RootNamespace>Pong</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Bot.cpp" />
+    <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="IntPoint.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Pong.cpp" />
+    <ClCompile Include="ProcessingData.cpp" />
+    <ClCompile Include="StartData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Bot.h" />
+    <ClInclude Include="Counter.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="IntPoint.h" />
+    <ClInclude Include="MoveLine.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="ProcessingData.h" />
+    <ClInclude Include="StartData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_800x600.bmp" />
+    <None Include="Resources\ball_10x10.bmp" />
+    <None Include="Resources\counter_50x100_00.bmp" />
+    <None Include="Resources\counter_50x100_01.bmp" />
+    <None Include="Resources\counter_50x100_02.bmp" />
+    <None Include="Resources\counter_50x100_03.bmp" />
+    <None Include="Resources\counter_50x100_04.bmp" />
+    <None Include="Resources\counter_50x100_05.bmp" />
+    <None Include="Resources\counter_50x100_06.bmp" />
+    <None Include="Resources\counter_50x100_07.bmp" />
+    <None Include="Resources\counter_50x100_08.bmp" />
+    <None Include="Resources\counter_50x100_09.bmp" />
+    <None Include="Resources\counter_50x100_test.bmp" />
+    <None Include="Resources\player01_10x50.bmp" />
+    <None Include="Resources\player02_10x50.bmp" />
+    <None Include="Resources\Pong.ini" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
