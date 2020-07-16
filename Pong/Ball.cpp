@@ -183,11 +183,13 @@ double Ball::bumpPlayer(    IntPoint*           position,
     IntPoint playerP01 = IntPoint( playerPoint.x + ( playerSize.x +
             rect->w ) / 2 , playerPoint.y + ( playerSize.y + rect->h ) / 2 );
 
+    // Points playerP00 and playerP01 are ends of player segment.
+    // ballPoint and position - ball segment.
     if( isSegmentsIntersection( &playerP00, &playerP01, &ballPoint, position,
             position ) )
     {
         return ( ( (double) playerPoint.y - position->y ) /
-                ( playerPoint.y - playerP00.y ) );
+                ( playerPoint.y - playerP01.y ) );
     }
 
     playerPoint = player02->getPosition();
@@ -201,7 +203,7 @@ double Ball::bumpPlayer(    IntPoint*           position,
             position ) )
     {
         return ( ( (double) playerPoint.y - position->y ) /
-                ( playerPoint.y - playerP00.y ) );
+                ( playerPoint.y - playerP01.y ) );
     }
 
     return -100.0;
