@@ -2,6 +2,7 @@ The game "Pong"
 
 Control:
 
+	Esc	exit
 	a	player01 move up
 	z	player01 move down
 	k	player02 move up (if bot disable)

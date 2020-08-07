@@ -127,5 +127,8 @@
     <None Include="Resources\Pong.ini">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="Resources\OldStandardTTItalic.ttf">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
 </Project>

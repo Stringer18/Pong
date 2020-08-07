@@ -41,12 +41,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2_ttf-2.0.15\include;C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2_ttf-2.0.15\lib\x86;C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -56,11 +56,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2_ttf-2.0.15\include;C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2_ttf-2.0.15\lib\x86;C:\Users\Litovchenko\Documents\Visual Studio 2010\Projects\Pong\Pong\Libs\SDL2-2.0.10\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -101,6 +105,7 @@
     <None Include="Resources\counter_50x100_08.bmp" />
     <None Include="Resources\counter_50x100_09.bmp" />
     <None Include="Resources\counter_50x100_test.bmp" />
+    <None Include="Resources\OldStandardTTItalic.ttf" />
     <None Include="Resources\player01_10x50.bmp" />
     <None Include="Resources\player02_10x50.bmp" />
     <None Include="Resources\Pong.ini" />
