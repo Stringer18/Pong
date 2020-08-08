@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <string>
 #include <vector>
 
@@ -111,6 +112,11 @@ class StartData
         SDL_Texture* player01Texture;
         SDL_Texture* player02Texture;
         SDL_Texture* ballTexture;
+
+        // --------------------------------------------------------------------
+        // This font is used for all letterings in the game.
+        // Including and primarily for counters.
+        TTF_Font *font;
 
     // ------------------------------------------------------------------------
     private:

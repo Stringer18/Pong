@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <Windows.h>
 
-
 #include "StartData.h"
 #include "IntPoint.h"
 #include "MoveLine.h"
@@ -47,6 +46,19 @@ StartData::StartData()
                 isSuccess = false;
             }
         }
+    }
+
+    if( isSuccess )
+    {
+        if ( TTF_Init() != 0 )
+        {
+            printf( "TTF_Init Error.\n" );
+            isSuccess = false;
+        }
+        //else
+        //{
+
+        //}
     }
 
     if( isSuccess )
@@ -132,7 +144,8 @@ StartData::~StartData()
     if( backgroundTexture != nullptr)
             { SDL_DestroyTexture( backgroundTexture ); }
     if( renderer != nullptr ) { SDL_DestroyRenderer( renderer ); }
-	if( gameWindow != nullptr ) { SDL_DestroyWindow( gameWindow ); }	
+	if( gameWindow != nullptr ) { SDL_DestroyWindow( gameWindow ); }
+    TTF_Quit();
     SDL_Quit();
 }
 
@@ -145,7 +158,7 @@ bool StartData::prepareTextures()
 
     // Background
     backgroundTexture = nullptr;
-    GetPrivateProfileString( "textures", "strBackground",
+    GetPrivateProfileString( "background", "strBackground",
             ".\\Resources\\background_800x600.bmp", szBuff,
             _MAX_STR_BUFF_SIZE_, _APP_FILE_INI_ );
     isSuccess = strBmpTextureToSdlTexture( szBuff, backgroundTexture );
@@ -167,7 +180,7 @@ bool StartData::prepareTextures()
                 "strCounterTextures%02d", i );
         sprintf_s( szBuffVal, _MAX_STR_BUFF_SIZE_,
                 ".\\Resources\\counter_50x100_%02d.bmp", i );
-        GetPrivateProfileString( "textures", szBuffKey, szBuffVal,
+        GetPrivateProfileString( "counters", szBuffKey, szBuffVal,
                 szBuff, _MAX_STR_BUFF_SIZE_, _APP_FILE_INI_ );
 
         SDL_Texture* buffTexture = nullptr;
@@ -188,7 +201,7 @@ bool StartData::prepareTextures()
     // ------------------------------------------------------------------------
     // First player
     player01Texture = nullptr;
-    GetPrivateProfileString( "textures", "strPlayer01",
+    GetPrivateProfileString( "player", "strPlayer01",
             ".\\Resources\\player01_10x50.bmp", szBuff,
             _MAX_STR_BUFF_SIZE_, _APP_FILE_INI_ );
     isSuccess = strBmpTextureToSdlTexture( szBuff, player01Texture );
@@ -202,7 +215,7 @@ bool StartData::prepareTextures()
     // ------------------------------------------------------------------------
     // Second player
     player02Texture = nullptr;
-    GetPrivateProfileString( "textures", "strPlayer02",
+    GetPrivateProfileString( "player", "strPlayer02",
             ".\\Resources\\player02_10x50.bmp", szBuff,
             _MAX_STR_BUFF_SIZE_, _APP_FILE_INI_ );
     isSuccess = strBmpTextureToSdlTexture( szBuff, player02Texture );
@@ -216,7 +229,7 @@ bool StartData::prepareTextures()
     // ------------------------------------------------------------------------
     // Ball
     ballTexture = nullptr;
-    GetPrivateProfileString( "textures", "strBall",
+    GetPrivateProfileString( "ball", "strBall",
             ".\\Resources\\ball_10x10.bmp", szBuff,
             _MAX_STR_BUFF_SIZE_, _APP_FILE_INI_ );
     isSuccess = strBmpTextureToSdlTexture( szBuff, ballTexture );
